@@ -1,4 +1,4 @@
 module RailsFakeApi
-  VERSION: String
+  VERSION: 0.1.0
   # See the writing guide of rbs: https://github.com/ruby/rbs#guides
 end

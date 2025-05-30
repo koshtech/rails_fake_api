@@ -1,6 +1,21 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "rails_fake_api"
+require 'simplecov'
+SimpleCov.start 'rails'
 
-require "test-unit"
+ENV["RAILS_ENV"] = "test"
+
+require_relative "../test/dummy/config/environment"
+require "rails/test_help"
+require "minitest/autorun"
+require "mocha/minitest"
+
+class ActiveSupport::TestCase
+  parallelize(workers: :number_of_processors)
+
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  # fixtures :all
+end
+
+class ActionDispatch::IntegrationTest
+end

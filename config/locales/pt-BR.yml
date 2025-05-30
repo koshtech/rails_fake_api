@@ -1,0 +1,5 @@
+pt-BR:
+  rails_fake_api:
+    errors:
+      resource_not_found: "Recurso não encontrado."
+      internal_server_error: "Ocorreu um erro interno no servidor."

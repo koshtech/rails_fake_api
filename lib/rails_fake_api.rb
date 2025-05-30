@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "rails_fake_api/version"
-require_relative "rails_fake_api/engine"
-require_relative "rails_fake_api/json_file_store"
+require "rails_fake_api/version"
+require "rails_fake_api/engine"
+require "rails_fake_api/json_file_store"
+require "rails_fake_api/errors"
 
 module RailsFakeApi
-  class Error < StandardError; end
 end

@@ -1,6 +1,6 @@
 module RailsFakeApi
   class FakeApiController < ApplicationController
-    skip_before_action :verify_authenticity_token
+    skip_before_action :verify_authenticity_token, raise: false
 
     before_action :set_resource_name
     before_action :set_resource_data, only: [:show, :update, :destroy]
@@ -15,7 +15,7 @@ module RailsFakeApi
       if @resource_data
         render json: @resource_data
       else
-        render json: { error: "Resource not found" }, status: :not_found
+        render json: { error: I18n.t('rails_fake_api.errors.resource_not_found') }, status: :not_found
       end
     end
 
@@ -44,7 +44,7 @@ module RailsFakeApi
         JsonFileStore.write(@resource_name, data)
         render json: @resource_data
       else
-        render json: { error: "Resource not found" }, status: :not_found
+        render json: { error: I18n.t('rails_fake_api.errors.resource_not_found') }, status: :not_found
       end
     end
 
@@ -56,7 +56,7 @@ module RailsFakeApi
         JsonFileStore.write(@resource_name, data)
         head :no_content
       else
-        render json: { error: "Resource not found" }, status: :not_found
+        render json: { error: I18n.t('rails_fake_api.errors.resource_not_found') }, status: :not_found
       end
     end
 
