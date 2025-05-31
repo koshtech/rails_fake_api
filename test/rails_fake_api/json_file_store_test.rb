@@ -9,9 +9,7 @@ class RailsFakeApi::JsonFileStoreTest < ActiveSupport::TestCase
     FileUtils.mkdir_p(TEST_FILE_PATH) unless File.exist?(TEST_FILE_PATH)
     FileUtils.rm_f(Dir.glob(TEST_FILE_PATH.join('*.json')))
 
-    RailsFakeApi::JsonFileStore.define_singleton_method(:file_path_prefix) do
-      TEST_FILE_PATH
-    end
+    RailsFakeApi::JsonFileStore.stubs(:file_path_prefix).returns(TEST_FILE_PATH)
   end
 
   teardown do
