@@ -1,3 +1,4 @@
+require "ruby_fake_api"
 # frozen_string_literal: true
 
 require "rails_fake_api/version"

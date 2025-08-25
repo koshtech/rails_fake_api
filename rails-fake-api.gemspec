@@ -3,7 +3,7 @@
 require_relative "lib/rails_fake_api/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "rails_fake_api"
+  spec.name = "rails-fake-api"
   spec.version = RailsFakeApi::VERSION
   spec.authors = ["Fernando Kosh"]
   spec.email = ["fernando.kosh@gmail.com"]
@@ -49,3 +49,5 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
+
+  spec.add_dependency "ruby-fake-api", ">= 0.1.0"
