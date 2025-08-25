@@ -21,7 +21,11 @@ module RailsFakeApi
 
     # POST /fake_api/:resource_name
     def create
-      new_item = params.permit!.to_h
+      data = params.permit!.to_h
+      sanitized = data.except(:controller, :action, :resource_name, :fake_api)
+
+      new_item = sanitized
+
       new_item['id'] = JsonFileStore.next_id(@resource_name)
 
       data = JsonFileStore.read(@resource_name)
