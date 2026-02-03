@@ -50,4 +50,3 @@ Gem::Specification.new do |spec|
   # guide at: https://bundler.io/guides/creating_gem.html
 end
 
-  spec.add_dependency "ruby-fake-api", ">= 0.1.0"
